@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="app">
+    <input type="radio" :checked="picked">
+    <label>单选按钮</label>
+</div>-->
+<div id="app">
+    <input type="radio" v-model="picked" value="html" id="html">
+    <label for="html">HTML</label>
+    <br>
+    <input type="radio" v-model="picked" value="js" id="js">
+    <label for="js">Javascript</label>
+    <br>
+    <input type="radio" v-model="picked" value="css" id="css">
+    <label for="css">CSS</label>
+    <br>
+    <P>选择的项是：{{picked}}</P>
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    /*var app=new Vue({
+        el:'#app',
+        data:{
+           picked:false
+        },
+       /!* methods:{
+
+        }*!/
+    })*/
+    var app=new Vue({
+        el:'#app',
+        data:{
+            picked:'js'
+        }
+    })
+</script>
+</html>
