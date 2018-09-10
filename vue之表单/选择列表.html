@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <!--法一：-->
+   <!--<div id="app">
+       <select v-model="selected" multiple> &lt;!&ndash;multiple表示多选&ndash;&gt;
+           <option>html</option>
+           <option value="js">javascript</option>  &lt;!&ndash;value是备选项，如果有value会先选含有value选项的，如果没有会比配option里的text&ndash;&gt;
+           <option>css</option>
+       </select>
+       <p>选择的项是：{{selected}}</p>
+   </div>-->
+   <!--法二：-->
+   <div id="app">
+       <select v-model="selected">
+           <option v-for="option in options" :value="option.value">
+               {{option.text}}
+           </option>
+       </select>
+       <p>选择的项是：{{selected}}</p>
+   </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    /*法一：*/
+    /*var app=new Vue({
+        el:'#app',
+        data:{
+            /!*selected:'html'*!/
+            selected:['html','js']
+        }
+    })*/
+    /*法二：*/
+    var app=new Vue({
+        el:'#app',
+        data:{
+            selected:'html',
+            options:[
+                {
+                    text:'html',
+                    value:'html'
+                },
+                {
+                    text:'javascript',
+                    value:'js'
+                },
+                {
+                    text:'css',
+                    value:'css'
+                },
+                {
+                    text:'jquery',
+                    value:'jquery'
+                },
+            ]
+
+        }
+    })
+</script>
+</html>
